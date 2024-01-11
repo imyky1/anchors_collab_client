@@ -1,0 +1,122 @@
+
+.logout_model_logout {
+    width: 100vw;
+    height: 100vh;
+    background-color: #8c8c8c57;
+    position: fixed;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    top: 0;
+    left: 0;
+  }
+
+  .model_main_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 530px;
+    height: 300px;
+    padding: 40px 80px;
+    border-radius: 10px;
+    background: #121212;
+    box-sizing: border-box;
+  }
+  
+  .model_question {
+    font-weight: bold;
+    text-align: center;
+    color: #d0d0d0;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  
+  .model_gyan {
+    margin-top: -76px;
+    text-align: center;
+    color: #a0a0a0;
+    text-align: center;
+    font-family: Inter;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .model_buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .model_button {
+    width: 157px;
+    height: 47px;
+    color: var(--success-green-700, #00cd93);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid var(--success-green-700, #047857);
+    box-shadow: 0px 4px 8px 0px rgba(31, 31, 31, 0.1);
+    cursor: pointer;
+  }
+  
+  .model_button:nth-child(2) {
+    border-radius: 4px;
+    border: 1px solid #f00;
+    box-shadow: 0px 4px 8px 0px rgba(31, 31, 31, 0.1);
+    color: red;
+  }
+  
+  .model_button:hover {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+  }
+  .model_button1_delete:hover {
+    transform: scale(1.05);
+  }
+  .model_button2_delete:hover {
+    transform: scale(1.05);
+  }
+
+
+
+  @media (max-width: 600px) {
+    .model_main_box {
+      width: 93vw;
+      height: max-content;
+      position: absolute;
+      margin-left: 0;
+      text-align: center;
+      padding: 10px 20px;
+    }
+  
+    .model_question {
+      font-size: 18px;
+      margin: 16px 0;
+    }
+  
+    .model_gyan {
+      font-size: 14px;
+      width: 80%;
+      margin: 3px 0;
+    }
+  
+    .model_buttons button {
+      width: 17vw;
+      margin: 20px 0;
+      font-size: 14px;
+      height: 37px;
+    }
+
+}
