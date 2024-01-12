@@ -44,7 +44,8 @@ const UserInfo = () => {
   const saveDetails = async () => {
     setIsLoading(true);
     mixpanel.track("Save Details anchors collab");
-    const linkedinProfileRegex = /^https:\/\/www\.linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/;
+    const linkedinProfileRegex =
+      /^https:\/\/www\.linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/;
 
     try {
       data.mobile = value;
@@ -74,11 +75,9 @@ const UserInfo = () => {
         setReFetchUserData((prev) => {
           !prev;
         });
-        setTimeout(() => {
-          setIsLoading(false);
-          navigate(`/dashboard`);
-        }, 1000);
-        // sendOTP()
+        setIsLoading(false);
+        navigate(`/dashboard/otp-verify?number=${data?.mobile}`);
+        sendOTP();
       } else {
         toast.error("Some error occured in saving data, Please try again!!", {
           autoClose: 1500,

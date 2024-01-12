@@ -22,6 +22,7 @@ const OtpVerify = () => {
       navigate("/dashboard");
     }
   }, [loggedUser]);
+  
   useEffect(() => {
     if (params.get("number")) {
       setNumber(params.get("number"));
