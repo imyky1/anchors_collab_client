@@ -104,8 +104,7 @@ const Home = () => {
             Get Noticed! <br /> Let Brands Find YOU
           </h1>
           <p>
-            Join the waitlist to get early access to premium brand deals and
-            elevate your influence
+          Connect with the perfect brands & elevate your LinkedIn influence
           </p>
         </div>
       </div>

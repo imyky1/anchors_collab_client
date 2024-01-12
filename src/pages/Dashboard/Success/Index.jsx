@@ -6,6 +6,76 @@ import { AuthContext } from "../../../Contexts/AuthState";
 import { toast } from "react-toastify";
 import mixpanel from "mixpanel-browser";
 
+const EventCountDown = () => {
+  const [time, setTime] = useState(new Date("2024-01-25T18:30:00.000Z") - new Date());
+
+  const [finalData, setFinalData] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  function convertMilliseconds(milliseconds) {
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
+    milliseconds %= 1000 * 60 * 60 * 24;
+
+    const hours = Math.floor(milliseconds / (1000 * 60 * 60));
+    milliseconds %= 1000 * 60 * 60;
+
+    const minutes = Math.floor(milliseconds / (1000 * 60));
+    milliseconds %= 1000 * 60;
+
+    const seconds = Math.floor(milliseconds / 1000);
+
+    return {
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
+    };
+  }
+
+  useEffect(() => {
+    if (time) {
+      setTimeout(() => {
+        setTime(time - 1000);
+      }, 1000);
+      let data = convertMilliseconds(time);
+      setFinalData({ ...data });
+    }
+  }, [time]);
+
+  return (
+    <div className="event_countdown_event_success_page">
+      {/* <h2>CountDown Ends In</h2> */}
+
+      <section>
+        <div>
+          <span>{finalData?.days}</span>
+          <p>DAYS</p>
+        </div>
+        <span>:</span>
+        <div>
+          <span>{finalData?.hours}</span>
+          <p>HOURS</p>
+        </div>
+        <span>:</span>
+        <div>
+          <span>{finalData?.minutes}</span>
+          <p>MINUTES</p>
+        </div>
+        <span>:</span>
+        <div>
+          <span>{finalData?.seconds}</span>
+          <p>SECONDS</p>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 const Success = () => {
   const {loggedUser} = useContext(AuthContext)
   const navigate = useNavigate()
@@ -20,6 +90,7 @@ const Success = () => {
       setCurrentUser(loggedUser?.name)
       setCode(loggedUser?.referal_code)
     },[loggedUser])
+
     useEffect(()=>{
       const getData = async() => {
         try {
@@ -106,14 +177,17 @@ Let's be in the loop together using ${window.location.origin}?refer=${code} !`
           
           <div className="text">
             <img src="/success.svg" alt="" />
-            <h1>Congratulations! <br /> You are on the anchors waitlist!</h1>
+            <h1>Congratulations! <br /> You've successfully joined the waitlist!</h1>
             <div className="input_field"><img src="/internet.svg" alt="" />{`${window.location.origin}?refer=${code}`}<img onClick={copyContent} src="/copy.svg" alt="" className="copy" /></div>
-            <p>Share your referral link to your friends to climb the leaderboard and <b>secure early & FREE access.</b> </p>
+            <p>Share this link with your network to climb the leaderboard and <b>EARN Referral Rewards.</b> </p>
             <button onClick={handleSendMessage} className="WhatsApp"><img src="/WhatsApp.svg" alt="" />Share on WhatsApp</button>
           </div>
+
+          <div>
+            <EventCountDown />
           <div className="leaderboard">
             <h1>Referral Leaderboard</h1>
-            <p>Top <b>200 Referral</b> will get <br /> <b style={{color:'#FF5C5C'}}>early and Free access</b> to the platform</p>
+            <p>Top <b>200 referrers</b> will get <br /> <b style={{color:'#FF5C5C'}}>Early & FREE access</b> to the platform!</p>
             <table>
                     <thead>
                         <tr style={{background: "#F5F5F5"}}>
@@ -139,6 +213,7 @@ Let's be in the loop together using ${window.location.origin}?refer=${code} !`
                         ))}
                     </tbody>
                 </table>
+        </div>
         </div>
         </div>
        

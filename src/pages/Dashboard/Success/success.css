@@ -120,6 +120,7 @@
    letter-spacing: 0em;
    text-align: left;
    color: #FFFFFF;
+   cursor: pointer;
   }
  .leaderboard{
     display: flex;
@@ -207,13 +208,95 @@ color: #FFFFFFB2;
 
  }
 
+ /* Event countdown */
+
+/* .event_countdown_event_success_page {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(
+    --Glass,
+    linear-gradient(
+      154deg,
+      rgba(255, 251, 251, 0.2) 43.83%,
+      rgba(18, 18, 18, 0.2) 103.02%
+    )
+  );
+  backdrop-filter: blur(7px);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 67px 35px;
+  box-sizing: border-box;
+  gap: 40px;
+  min-height: 306px;
+} */
+
+.event_countdown_event_success_page > h2 {
+  color: #000;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.event_countdown_event_success_page > section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  justify-content: center;
+}
+
+.event_countdown_event_success_page > section > span{
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+.event_countdown_event_success_page > section > div {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0px;
+  padding: 5px 12px;
+  width: 63px;
+  box-sizing: border-box;
+}
+
+.event_countdown_event_success_page > section > div span {
+  color: #000;
+  text-align: center;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.event_countdown_event_success_page > section > div p {
+  color: #000;
+  font-family: "Gilroy-Regular", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+
+
  @media screen and (max-width:950px) {
     .success_container .content{
         flex-direction: column;
+        margin-top: 33px;
     }
-    .leaderboard{
-        margin-top: 50px;
-    }
+
  }
  @media screen and (max-width:600px) {
    .success_container .header{
@@ -244,6 +327,7 @@ color: #FFFFFFB2;
    .success_container .text p{
       margin-top: 30px;
       font-size: 14px;
+      width: 95%;
    }
    .leaderboard{
       width: 320px;
@@ -275,4 +359,27 @@ color: #FFFFFFB2;
       height: 20px;
       top:8px;
    }
+
+
+   .event_countdown_event_success_page > section{
+      margin-top: 60px;
+   }
+
+   .event_countdown_event_success_page > section > div span {
+      font-size: 16px;
+   }
+
+   .event_countdown_event_success_page > section > div {
+      width: 55px;
+      padding: 3px 12px;
+   }
+
+   .event_countdown_event_success_page > section > div p {
+      font-size: 10px;
+   }
+
+   .event_countdown_event_success_page > section > span {
+      font-size: 16px;
+   }
+
  }

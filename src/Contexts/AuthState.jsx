@@ -6,6 +6,14 @@ const host = import.meta.env.VITE_SERVER_HOST;
 const AuthState = (props) => {
   const [loggedUser, setLoggedUser] = useState(null);
 
+  const [reFetchUserData, setReFetchUserData] = useState(false)
+
+  useEffect(() => {
+    GetUserData()
+   
+  }, [reFetchUserData])
+  
+
   // fetches the linkedin user data -------
   const linkedinLogin = (token) => {
     fetch(`${host}/auth/linkedin/success?token=${token}`, {
@@ -90,7 +98,7 @@ const AuthState = (props) => {
   };
 
   return (
-    <AuthContext.Provider value={{ loggedUser, linkedinLogin, GetUserData}}>
+    <AuthContext.Provider value={{ loggedUser, linkedinLogin, GetUserData ,setReFetchUserData}}>
       {props.children}
     </AuthContext.Provider>
   );
