@@ -19,14 +19,14 @@ const UserInfo = () => {
   const { loggedUser, setReFetchUserData } = useContext(AuthContext);
   const referCode = localStorage.getItem("anchors_collab_refer");
   const { SaveUserInfo, SentMessageFromSNS } = useContext(UserContext);
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(loggedUser?.mobile);
   const [data, setdata] = useState({
-    linkedinLink: null,
+    linkedinLink: loggedUser?.linkedinLink,
     mobile: value,
     refered_code: referCode,
   });
   const [error, setError] = useState("");
-
+  console.log(loggedUser)
   useEffect(() => {
     mixpanel.track("Page visited Anchors Collab");
   }, []);
