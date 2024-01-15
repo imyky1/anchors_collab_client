@@ -45,7 +45,7 @@ const UserInfo = () => {
     setIsLoading(true);
     mixpanel.track("Save Details anchors collab");
     const linkedinProfileRegex =
-      /^https:\/\/www\.linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/;
+    /^https:\/\/(www\.|in\.)?linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/;
 
     try {
       data.mobile = value;
@@ -79,7 +79,8 @@ const UserInfo = () => {
         navigate(`/dashboard/otp-verify?number=${data?.mobile}`);
         sendOTP();
       } else {
-        toast.error("Some error occured in saving data, Please try again!!", {
+        setIsLoading(false)
+        toast.error(result?.error, {
           autoClose: 1500,
         });
       }

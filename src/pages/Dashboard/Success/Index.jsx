@@ -187,7 +187,9 @@ Let's be in the loop together using ${window.location.origin}?refer=${code} !`
             <EventCountDown />
           <div className="leaderboard">
             <h1>Referral Leaderboard</h1>
-            <p>Top <b>200 referrers</b> will get <br /> <b style={{color:'#FF5C5C'}}>Early & FREE access</b> to the platform!</p>
+            <span>Joining Fee : ₹999/-</span>
+            <p>Top 200 Referrers : <b>Early & FREE Access</b></p>
+            <p>Next 50 Referrers : <b>50% off </b></p>
             <table>
                     <thead>
                         <tr style={{background: "#F5F5F5"}}>
