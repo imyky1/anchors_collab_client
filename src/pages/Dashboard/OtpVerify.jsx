@@ -100,7 +100,7 @@ const OtpVerify = () => {
             color: "#757575",
           }}
         >
-          OTP sent to this number <b>{number}</b> <img src="edit.svg" alt="" />{" "}
+          OTP sent to this number <b>{`+${number}`}</b> <img src="edit.svg" alt="" />{" "}
           <br /> Please enter OTP to continue
         </p>
         <form className="userform" action="">
