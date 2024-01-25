@@ -37,10 +37,18 @@
 .success_container .content {
    width: 100%;
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    justify-content: space-around;
    align-items: center;
-   margin-top: 80px;
+ }
+
+ .success_container .content > div{
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   padding: 8px 20px;
+   align-items: flex-start;
+   border-radius: 5px;
  }
    
 .success_container .text {
@@ -53,26 +61,41 @@
    text-align: center;
    color: #000000; 
    z-index: 1;
+   margin-top: 80px;
  }
+
+ .success_container .text section{
+   padding: 8px 20px;
+   border-radius: 5px;
+background: #FFDF39;
+color: var(--Natural-900, #212121);
+font-family: "Public Sans";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+ }
+
+
 .success_container .text h1{
    width: 429px;
    font-family: Public Sans;
-   font-size: 28px;
+   font-size: 20px;
    font-weight: 700;
    line-height: 35px;
    letter-spacing: 0em;
    text-align: center;
  }
- .success_container .text p{
-   margin-top: 50px;
+ .success_container .text span{
    width: 407px;
    /* height: 38px; */
-   font-family: Public Sans;
-   font-size: 16px;
+   font-family: "Public Sans";
+   font-size: 20px;
+   font-style: normal;
    font-weight: 400;
-   line-height: 19px;
-   letter-spacing: 0em;
+   line-height: normal;
    color: #424242;
+   margin-top: 20px;
    text-align: center;
  }
  .input_field{
@@ -101,7 +124,7 @@
    gap: 8px;
  }
  .WhatsApp{
-  margin-top: 10px;
+  margin-top: 40px;
   display: flex;
   gap: 5px;
   width: 238px;
@@ -111,8 +134,8 @@
   padding: 11px 32px 11px 32px;
   border-radius: 100px;
   border: 1px;
-  border: 1px solid #121212;
-  background: #121212;
+  border: 1px solid #064E3B;
+  background: #064E3B;
   font-family: Public Sans;
   font-size: 16px;
   font-weight: 400;
@@ -134,7 +157,6 @@
 }
 
 .leaderboard > span{
-  border: 1px solid rgba(18, 18, 18, 0.50);
   padding: 7px 41.5px 7px 41.421px;
   color: rgba(18, 18, 18, 0.50);
 font-family: Public Sans;
@@ -143,6 +165,9 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 margin-bottom: 12px;
+background:#212121;
+border-radius: 4px;
+color: #FAFAFA;
 }
 
 .leaderboard h1{
@@ -158,13 +183,14 @@ margin-bottom: 12px;
    margin-top: 0;
    width: 338px;
    font-family: Public Sans;
-   font-size: 16px;
+   font-size: 14px;
    font-weight: 400;
    line-height: 19px;
    letter-spacing: 0em;
    text-align: center;
-   color: #757575;
+   color: #424242;
    margin: unset;
+   margin-bottom: 2px;
 }
 table{
    width: 398px;
@@ -306,9 +332,9 @@ color: #FFFFFFB2;
 
 
 @media screen and (max-width:950px) {
-   .success_container .content{
+   .success_container .content > div{
        flex-direction: column;
-       margin-top: 20px;
+       padding-bottom: unset;
    }
 
 }
@@ -324,9 +350,18 @@ color: #FFFFFFB2;
      width: 24px;
      height: 24px;
   }
+  
+  .success_container .text{
+   margin: unset;
+   margin: auto;
+  }
+
+  .success_container .text section{
+   font-size: 16px;
+  }
+
   .success_container .text h1{
      width: 243px;
-     height: 84px;
      font-family: Public Sans;
      font-size: 20px;
      font-weight: 700;
@@ -338,7 +373,7 @@ color: #FFFFFFB2;
   .input_field{
      margin-top: 0px;
   }
-  .success_container .text p{
+  .success_container .text span{
      margin: 18px 0;
      font-size: 14px;
      width: 95%;
@@ -346,11 +381,12 @@ color: #FFFFFFB2;
 
   .WhatsApp{
      margin: unset;
+     margin: 30px;
   }
 
   .leaderboard{
-     width: 320px;
-     height: 349px;
+     width: 100vw;
+     box-sizing: border-box;
   }
   table{
      width: 280px;

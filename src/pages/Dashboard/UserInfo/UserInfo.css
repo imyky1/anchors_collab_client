@@ -33,7 +33,7 @@
   }
  .info_container .text h1{
     font-family:  'Public Sans', sans-serif;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 59px;
     letter-spacing: 0em;
@@ -98,14 +98,16 @@ color: #757575;
     align-items: center;
   }
 .info_container  .footer button{
-    width: 291px;
-    height: 48px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
-    background:#121212;
-    color: #FFFFFF;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #ff5c5c;
+  color: #fafafa;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   }
 
   .PhoneInputCountrySelectArrow{
