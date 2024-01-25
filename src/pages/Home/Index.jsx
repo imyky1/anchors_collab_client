@@ -5,6 +5,11 @@ import { AuthContext } from "../../Contexts/AuthState";
 import { useNavigate } from "react-router-dom";
 import LoaderOne from "../../Components/Loaders/Loader";
 import mixpanel from "mixpanel-browser";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { RiShining2Line } from "react-icons/ri";
+import { MdCelebration } from "react-icons/md";
+import imagesStock from "../../assets/Images/imagesStock.png"
+
 const Home = () => {
   
   const navigate = useNavigate()
@@ -25,6 +30,7 @@ const Home = () => {
     };
     handleURLParams();
 }, []);
+
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth < 798);
@@ -88,23 +94,38 @@ const Home = () => {
       </header>
       <div className="backgroundImage"></div>
       <div className="content">
-        <button
+        <span                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+          style={{
+            borderRadius: "1000px",
+            color:"#5E6EC4",
+            borderColor:"#5E6EC4",
+            cursor:"default"
+          }}
+          className="button_type_01"
+        >
+           <RiShining2Line /> For LinkedIn Creators Only
+        </span>
+        <span                                                                                                                                                                                                                                                                                                                                                                                                                                                             
           style={{
             display: "flex",
             gap: "10px",
             borderRadius: "1000px",
-            boxShadow: "0px 4px 4px 0px #00000040",
+            color:"#059669",
+            borderColor:"#059669",
+            marginTop:"16px",
+            cursor:"default"
           }}
           className="button_type_01"
         >
-          <img src="/linkedin.svg" alt="" /> for linkedin creators only
-        </button>
+           <MdCelebration /> Early Access : January 26
+        </span>
         <div className="text">
           <h1>
             Get Noticed! <br /> Let Brands Find YOU
           </h1>
           <p>
-          Connect with the perfect brands & elevate your LinkedIn influence
+          Connect & Collaborate with the perfect brands. 
+Elevate your LinkedIn influence.
           </p>
         </div>
       </div>
@@ -117,12 +138,17 @@ const Home = () => {
             "My account →"
           ) : (
             <>
-              <img src="/linkedin.svg" alt="" />
+<FaLinkedinIn/>
               Continue with LinkedIn →
             </>
             
           )}
         </button>
+
+            <div>
+        <img src={imagesStock} alt="" />
+        <span><b>400+</b> LinkedIn Creators Already Joined</span>
+            </div>
       </footer>
     </div>
 

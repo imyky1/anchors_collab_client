@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 import { UserContext } from "../../Contexts/UserState";
 import { useNavigate } from "react-router-dom";
 import mixpanel from "mixpanel-browser";
+import { MdCelebration } from "react-icons/md";
 
 const OtpVerify = () => {
   const params = new URLSearchParams(window.location.search);
@@ -87,11 +88,26 @@ const OtpVerify = () => {
         </div>
       </header>
       <div className="content">
-        <img src="/celebrate.svg" alt="" />
-        <div className="text">
-          <h1>Welcome, {loggedUser?.name?.split(" ")[0]}</h1>
-          <p>Please fill this to secure your spot</p>
-        </div>
+      <span                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+          style={{
+            display: "flex",
+            gap: "10px",
+            borderRadius: "1000px",
+            color:"#059669",
+            borderColor:"#059669",
+            marginBottom:"40px",
+            cursor:"default"
+          }}
+          className="button_type_01"
+        >
+           <MdCelebration /> Early Access : January 26
+        </span>
+
+          <div className="text">
+            <h1>Welcome, {loggedUser?.name?.split(" ")[0]}</h1>
+            <p> Fill the Details to Unlock your Referral Code<br/>
+Be a <b>Top Referrer</b>: Get Early & Free Access</p>
+          </div>
         <p
           style={{
             fontFamily: "Public sans",
