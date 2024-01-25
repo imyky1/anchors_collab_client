@@ -107,6 +107,11 @@ color: #757575;
     background:#121212;
     color: #FFFFFF;
   }
+
+  .PhoneInputCountrySelectArrow{
+    margin-left: 10px !important
+  }
+
   @media screen and (max-width:580px) {
     .info_container .text h1{
       font-family: Public Sans;

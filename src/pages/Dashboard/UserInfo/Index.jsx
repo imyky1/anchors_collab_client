@@ -25,8 +25,6 @@ const UserInfo = () => {
     mobile: value,
     refered_code: referCode,
   });
-  const [error, setError] = useState("");
-  console.log(loggedUser)
   useEffect(() => {
     mixpanel.track("Page visited Anchors Collab");
   }, []);
@@ -45,7 +43,7 @@ const UserInfo = () => {
     setIsLoading(true);
     mixpanel.track("Save Details anchors collab");
     const linkedinProfileRegex =
-    /^https:\/\/(www\.|in\.)?linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/;
+    /^https:\/\/(www\.|in\.)?linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?.*$/;
 
     try {
       data.mobile = value;
@@ -144,11 +142,12 @@ const UserInfo = () => {
             <div className="input_field">
               {/* <img src="/call.svg" alt="" /> */}
               <PhoneInput
-                style={{ width: "100%", marginLeft: "10px" }}
+                style={{ width: "100%" }}
                 name="mobile"
                 value={value}
                 onChange={setValue}
-                placeholder="+918799710137"
+                placeholder="8799710137"
+                defaultCountry="IN"
               />
             </div>
             <div className="input_field">
