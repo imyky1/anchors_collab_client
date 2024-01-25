@@ -1,0 +1,109 @@
+.success_container .content .activation_page_left_content {
+  margin-top: 90px;
+  align-items: center;
+}
+.activaton_page_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 442px;
+  height: 100%;
+}
+.activaton_page_text h1 {
+  color: #000;
+  text-align: center;
+  font-family: "Public Sans";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-top: 20px;
+}
+.activaton_page_text h2 {
+  color: #000;
+  font-family: "Public Sans";
+  text-align: center;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+.activaton_page_text button {
+  width: 291px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #121212;
+  color: #fff;
+  font-family: "Public Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 11px;
+}
+.activaton_page_text h3 {
+  width: 306px;
+  color: #ff5c5c;
+  text-align: center;
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.activation_page_leaderboard {
+  width: 518px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 36px;
+  border-radius: 10px;
+}
+
+.activation_page_leaderboard h1 {
+  margin-top: 0;
+  font-family: Public Sans;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--Natural-900, #212121);
+}
+.activation_page_leaderboard ol li {
+  color: #000;
+  font-family: "Public Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+@media (max-width: 600px) {
+  .success_container .content .activation_page_left_content {
+    padding: 0;
+  }
+  .activaton_page_text {
+    width: 349px;
+  }
+  .activaton_page_text h2 {
+    margin-top: 33px;
+  }
+  .activaton_page_text button {
+    margin-top: 32px;
+  }
+  .activation_page_leaderboard {
+    width: 300px;
+    padding: 18px;
+    margin-top: 30px;
+  }
+  .activation_page_leaderboard ol li {
+    font-size: 14px;
+  }
+}

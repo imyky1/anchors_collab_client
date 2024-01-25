@@ -1,0 +1,45 @@
+.small_screen_alert {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.small_screen_alert .header {
+  width: 80%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+.small_screen_alert .header .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Public Sans;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #12121280;
+  gap: 12px;
+}
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.smallScreenAlert h2 {
+  width: 306px;
+  color: #ff5c5c;
+  text-align: center;
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

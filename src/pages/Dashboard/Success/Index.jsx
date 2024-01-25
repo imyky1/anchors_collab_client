@@ -88,6 +88,11 @@ const Success = () => {
   const [content, setContent] = useState("");
   const [leaderboard, setLeaderboard] = useState({});
 
+  // if users condition met then navigate to rank page
+  if (true) {
+    navigate('/Dashboard/rank_page');
+  }
+
   useEffect(() => {
     mixpanel.track("Page visited Anchors Collab");
     setCurrentUser(loggedUser?.name);
@@ -113,7 +118,7 @@ const Success = () => {
           setLeaderboard({
             data: response.data.sortedLeaderboard,
             currentUserRank: response.data.currentUserIndex,
-            userIndex:response.data?.userIndex
+            userIndex: response.data?.userIndex,
           });
         }
       } catch (error) {
@@ -216,20 +221,34 @@ Let's be in the loop together using ${window.location.origin}?refer=${code} !`,
 
         <div>
           <div className="text">
-            {leaderboard?.currentUserRank !== -1 ? <section>
-              Your Rank is : <b>{leaderboard?.currentUserRank + 1}</b>
-            </section> :
-            <section>
-            Your Waitlist Number : <b>{leaderboard?.userIndex}</b>
-          </section>
-            }
-            <h1>{(leaderboard?.currentUserRank+1 > 0 && leaderboard?.currentUserRank+1 < 200) ? "Congratulations! " : "Almost there!"}</h1>
+            {leaderboard?.currentUserRank !== -1 ? (
+              <section>
+                Your Rank is : <b>{leaderboard?.currentUserRank + 1}</b>
+              </section>
+            ) : (
+              <section>
+                Your Waitlist Number : <b>{leaderboard?.userIndex}</b>
+              </section>
+            )}
+            <h1>
+              {leaderboard?.currentUserRank + 1 > 0 &&
+              leaderboard?.currentUserRank + 1 < 200
+                ? "Congratulations! "
+                : "Almost there!"}
+            </h1>
             <span>
-            {(leaderboard?.currentUserRank+1 > 0 && leaderboard?.currentUserRank+1 < 200) ? <>You're Top 200!
-              <br /> Share more & secure your VIP collab spot!</>
-              :
-              <>Share now for Min. 1 Referral to Crack the 
-              <br /> Top 200 for FREE & Early Access!</>}
+              {leaderboard?.currentUserRank + 1 > 0 &&
+              leaderboard?.currentUserRank + 1 < 200 ? (
+                <>
+                  You're Top 200!
+                  <br /> Share more & secure your VIP collab spot!
+                </>
+              ) : (
+                <>
+                  Share now for Min. 1 Referral to Crack the
+                  <br /> Top 200 for FREE & Early Access!
+                </>
+              )}
             </span>
             <div className="input_field">
               <img src="/internet.svg" alt="" />
@@ -283,13 +302,9 @@ Let's be in the loop together using ${window.location.origin}?refer=${code} !`,
                     </tr>
                   ) : (
                     <tr className="current">
-                      <td className="index">
-                        --
-                      </td>
+                      <td className="index">--</td>
                       <td className="name">You</td>
-                      <td className="count">
-                        0
-                      </td>
+                      <td className="count">0</td>
                     </tr>
                   )}
                   {leaderboard?.data?.map(

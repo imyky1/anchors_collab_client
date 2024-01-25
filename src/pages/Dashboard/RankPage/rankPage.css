@@ -1,0 +1,124 @@
+.header .rank_page_profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Public Sans;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #12121280;
+    gap: 12px;
+   }
+   .rank_page_profile img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+   }
+.rank_page_content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+}
+.rank_page_content h1 {
+  color: #000;
+  text-align: center;
+  font-family: "Public Sans";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+.rank_page_content h2 {
+  color: #000;
+  font-family: "Public Sans";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+.rank_page_content h3 {
+  color: var(--Natural-800, #424242);
+  text-align: center;
+  font-family: "Public Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 535px;
+  margin-top: 30px;
+}
+.rank_page_referral_code {
+  display: flex;
+  padding: 8px 20px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 1000px;
+  border: 1px solid #292929;
+  color: #000;
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 129px;
+}
+.rank_page_content h4 {
+  color: #ff5c5c;
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+.rank_page_content button {
+  width: 291px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #121212;
+  color: #fff;
+  font-family: "Public Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 27px;
+}
+@media (max-width:600px) {
+    .rank_page_content{
+        width: 360px;
+    }
+    .rank_page_content h1{
+        font-size: 30px;
+        margin-top: 150px;
+    }
+    .rank_page_content h2{
+        font-size: 30px;
+    }
+    .rank_page_content h3{
+        font-size: 14px;
+    }
+    .rank_page_referral_code{
+        margin-top: 73px;
+    }
+    .rank_page_content button{
+        margin-top: 30px;
+    }
+    .header .rank_page_profile{
+        font-size: 14px;
+        line-height: 16px;
+     }
+     .rank_page_profile img{
+        width: 24px;
+        height: 24px;
+     }
+}
