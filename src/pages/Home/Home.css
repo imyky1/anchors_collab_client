@@ -36,7 +36,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .backgroundImage {
@@ -53,7 +53,7 @@
 }
 
 .text {
-  margin-top: 10px;
+  margin-top: 100px;
   width: 493px;
   text-align: center;
   color: #000000; /* Adjust text color for readability */

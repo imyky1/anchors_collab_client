@@ -136,7 +136,7 @@ const UserInfo = () => {
           }}
           className="button_type_01"
         >
-           <MdCelebration /> Early Access : January 26
+           <MdCelebration size={24}/> Doors Open Feb 3rd...
         </span>
 
           <div className="text">

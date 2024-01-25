@@ -6,6 +6,7 @@ import { AuthContext } from "../../../Contexts/AuthState";
 import { toast } from "react-toastify";
 import mixpanel from "mixpanel-browser";
 import { MdCelebration } from "react-icons/md";
+import { SlLockOpen } from "react-icons/sl";
 
 const EventCountDown = () => {
   const [time, setTime] = useState(
@@ -89,9 +90,9 @@ const Success = () => {
   const [leaderboard, setLeaderboard] = useState({});
 
   // if users condition met then navigate to rank page
-  if (true) {
-    navigate('/Dashboard/rank_page');
-  }
+  // if (true) {
+  //   navigate('/Dashboard/rank_page');
+  // }
 
   useEffect(() => {
     mixpanel.track("Page visited Anchors Collab");
@@ -116,7 +117,7 @@ const Success = () => {
           // }));
           // console.log(list);
           setLeaderboard({
-            data: response.data.sortedLeaderboard,
+            // data: response.data.sortedLeaderboard,
             currentUserRank: response.data.currentUserIndex,
             userIndex: response.data?.userIndex,
           });
@@ -127,6 +128,24 @@ const Success = () => {
     };
     getData();
   }, []);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const host = import.meta.env.VITE_SERVER_HOST;
+        const response = await axios.get(`${host}/user/users-to-filter`);
+        const usersToFilter = response.data
+        console.log(usersToFilter)
+        setLeaderboard({
+          ...leaderboard,data:usersToFilter
+        })
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+
+    fetchUsers();
+  },[]);
+  console.log(leaderboard)
 
   const WA_content = [
     {
@@ -208,39 +227,40 @@ Let's be in the loop together using ${window.location.origin}?refer=${code} !`,
           style={{
             display: "flex",
             gap: "10px",
-            borderRadius: "1000px",
+            border:'none',
             color: "#059669",
-            borderColor: "#059669",
+            fontWeight:'700',
+            fontFamily:'Public Sans',
             marginBottom: "40px",
             cursor: "default",
           }}
           className="button_type_01"
         >
-          <MdCelebration /> Early Access : January 26
+          <SlLockOpen />  Top 67 Granted Early Access
         </span>
 
         <div>
           <div className="text">
             {leaderboard?.currentUserRank !== -1 ? (
               <section>
-                Your Rank is : <b>{leaderboard?.currentUserRank + 1}</b>
+                Your Rank : <b>{leaderboard?.currentUserRank + 1}</b>
               </section>
             ) : (
               <section>
-                Your Waitlist Number : <b>{leaderboard?.userIndex}</b>
+                Waitlist Number : <b>{leaderboard?.userIndex}</b>
               </section>
             )}
             <h1>
               {leaderboard?.currentUserRank + 1 > 0 &&
-              leaderboard?.currentUserRank + 1 < 200
+              leaderboard?.currentUserRank + 1 < 250
                 ? "Congratulations! "
                 : "Almost there!"}
             </h1>
             <span>
               {leaderboard?.currentUserRank + 1 > 0 &&
-              leaderboard?.currentUserRank + 1 < 200 ? (
+              leaderboard?.currentUserRank + 1 < 250 ? (
                 <>
-                  You're Top 200!
+                  You're Top 50!
                   <br /> Share more & secure your VIP collab spot!
                 </>
               ) : (
@@ -272,12 +292,12 @@ Let's be in the loop together using ${window.location.origin}?refer=${code} !`,
             <div className="leaderboard">
               <h1>Referral Leaderboard</h1>
               <span>Joining Fee : ₹999/-</span>
-              <p>
+              {/* <p>
                 Top 200 Referrers :{" "}
                 <b style={{ color: "#212121" }}>Early & FREE Access</b>
-              </p>
+              </p> */}
               <p>
-                Next 50 Referrers : <b style={{ color: "#212121" }}>50% off </b>
+                Top 50 Referrers : <b style={{ color: "#212121" }}>50% off </b>
               </p>
               <table>
                 <thead>
